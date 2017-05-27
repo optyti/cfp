@@ -9,6 +9,7 @@ import {
     AuthServerProvider,
     AccountService,
     UserService,
+    SourceService,
     StateStorageService,
     LoginService,
     LoginModalService,
@@ -35,6 +36,7 @@ import {
         Principal,
         CSRFService,
         AuthServerProvider,
+        SourceService,
         UserService,
         DatePipe
     ],
