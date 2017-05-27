@@ -7,6 +7,7 @@ import { Ng2Webstorage } from 'ng2-webstorage';
 import { CfpSharedModule, UserRouteAccessService } from './shared';
 import { CfpHomeModule } from './home/home.module';
 import { CfpAdminModule } from './admin/admin.module';
+import { CfpConfigurationModule } from './configuration/configuration.module';
 import { CfpAccountModule } from './account/account.module';
 import { CfpEntityModule } from './entities/entity.module';
 
@@ -32,6 +33,7 @@ import {
         CfpSharedModule,
         CfpHomeModule,
         CfpAdminModule,
+        CfpConfigurationModule,
         CfpAccountModule,
         CfpEntityModule
     ],
