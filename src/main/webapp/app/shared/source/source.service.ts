@@ -10,8 +10,8 @@ import { createRequestOption } from '../model/request-util';
 export class SourceService {
     private resourceUrlCreate = 'source/createSource';
     private resourceUrlUpdate = 'source/updateSource';
-    private resourceUrlFind = 'source/getSource';
-    private resourceUrlQuery = 'source/getAllSources';
+    private resourceUrlFind = 'source/findSource';
+    private resourceUrlQuery = 'source/allSources';
     private resourceUrlDelete = 'source/deleteSource';
 
     constructor(private http: Http) { }

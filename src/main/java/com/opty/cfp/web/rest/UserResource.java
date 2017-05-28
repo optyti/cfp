@@ -80,7 +80,7 @@ public class UserResource {
      * <p>
      * Creates a new user if the login and email are not already used, and sends an
      * mail with an activation link.
-     * The user needs to be activated on creation.
+     * The user needs to be activated on creation. 
      * </p>
      *
      * @param managedUserVM the user to create

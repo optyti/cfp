@@ -74,7 +74,7 @@ public class SourceResource {
         // Lowercase the user login before comparing with database
         } else if (sourceRepository.findOneByName(managedSourceVM.getName().toLowerCase()).isPresent()) {
             return ResponseEntity.badRequest()
-                .headers(HeaderUtil.createFailureAlert(ENTITY_NAME, "nameexists", "Name already in use"))
+                .headers(HeaderUtil.createFailureAlert(ENTITY_NAME, "fonteexists", "Name already in use"))
                 .body(null);
         } else {
             Source newSource = sourceService.createSource(managedSourceVM);
@@ -85,11 +85,10 @@ public class SourceResource {
         }
     }
     
-    @GetMapping("/getSource")
+    @GetMapping("/findSource/{id}")
     @Timed
     public ResponseEntity<SourceDTO> getSource(@PathVariable Long id) {
         log.debug("REST request to get Source: {}", id);
-        System.out.println(id);
         return ResponseUtil.wrapOrNotFound(
             sourceService.getSourceById(id)
                 .map(SourceDTO::new));
@@ -103,7 +102,7 @@ public class SourceResource {
         Optional<Source> existingSource = sourceRepository.findOneByName(managedSourceVM.getName());
         existingSource = sourceRepository.findOneByName(managedSourceVM.getName().toLowerCase());
         if (existingSource.isPresent() && (!existingSource.get().getId().equals(managedSourceVM.getId()))) {
-            return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert(ENTITY_NAME, "sourceexists", "Source already in use")).body(null);
+            return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert(ENTITY_NAME, "fonteexists", "Source already in use")).body(null);
         }
         Optional<SourceDTO> updatedSource = sourceService.updateSource(managedSourceVM);
 
@@ -111,15 +110,15 @@ public class SourceResource {
             HeaderUtil.createAlert("configurationSource.updated", managedSourceVM.getName()));
     }
 
-    @GetMapping("/getAllSources")
+    @GetMapping("/allSources")
     @Timed
     public ResponseEntity<List<SourceDTO>> getAllSources(@ApiParam Pageable pageable) {
         final Page<SourceDTO> page = sourceService.getAllManagedSources(pageable);
-        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/sources");
+        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/source/allSources");
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }
 
-    @DeleteMapping("/deleteSource")
+    @DeleteMapping("/deleteSource/{id}")
     @Timed
     @Secured(AuthoritiesConstants.ADMIN)
     public ResponseEntity<Void> deleteSource(@PathVariable Long id) {

@@ -68,7 +68,7 @@ public class Source extends AbstractAuditingEntity implements Serializable{
 	/**
 	 * @return the activated
 	 */
-	public boolean isActivated() {
+	public boolean getActivated() {
 		return activated;
 	}
 

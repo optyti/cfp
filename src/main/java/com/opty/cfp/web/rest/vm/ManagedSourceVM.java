@@ -1,5 +1,7 @@
 package com.opty.cfp.web.rest.vm;
 
+import java.time.Instant;
+
 import com.opty.cfp.service.dto.SourceDTO;
 
 /**
@@ -10,9 +12,9 @@ public class ManagedSourceVM extends SourceDTO{
     public ManagedSourceVM() {
     }
 
-    public ManagedSourceVM(Long id, String name, boolean activated) {
+    public ManagedSourceVM(Long id, String name, boolean activated, String createdBy, Instant createdDate, String lastModifiedBy, Instant lastModifiedDate) {
 
-        super(id, name, activated);
+        super(id, name, activated, createdBy, createdDate, lastModifiedBy, lastModifiedDate);
 
     }
 
