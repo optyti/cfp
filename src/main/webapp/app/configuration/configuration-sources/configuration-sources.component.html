@@ -1,0 +1,71 @@
+<div>
+    <h2>
+        <span jhiTranslate="configurationSource.home.title">Sources</span>
+        <button class="btn btn-primary float-right" [routerLink]="['/', { outlets: { popup: ['configuration-sources-new'] } }]">
+            <span class="fa fa-plus"></span> <span jhiTranslate="configurationSource.home.createLabel">Create a new Source</span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="table-responsive" *ngIf="sources">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" >
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span><span class="fa fa-sort"></span></th>
+                <th jhiSortBy="name"><span jhiTranslate="configurationSource.name">Name</span> <span class="fa fa-sort"></span></th>
+                <th></th>
+                <th jhiSortBy="createdDate"><span jhiTranslate="configurationSource.createdDate">Created Date</span> <span class="fa fa-sort"></span></th>
+                <th jhiSortBy="lastModifiedBy"><span jhiTranslate="configurationSource.lastModifiedBy">Last Modified By</span> <span class="fa fa-sort"></span></th>
+                <th jhiSortBy="lastModifiedDate"><span jhiTranslate="configurationSource.lastModifiedDate">Last Modified Date</span> <span class="fa fa-sort"></span></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody *ngIf ="sources">
+            <tr *ngFor="let source of sources; trackBy: trackIdentity">
+                <td><a [routerLink]="['../configuration-sources', source.id]">{{source.id}}</a></td>
+                <td>{{source.name}}</td>
+                <td>
+                    <span class="badge badge-danger hand" (click)="setActive(source, true)" *ngIf="!source.activated"
+                          jhiTranslate="configurationSource.deactivated">Deactivated</span>
+                    <span class="badge badge-success hand" (click)="setActive(source, false)" *ngIf="source.activated"
+                          jhiTranslate="configurationSource.activated">Activated</span>
+                </td>
+                <td>{{source.createdDate | date:'dd/MM/yy HH:mm'}}</td>
+                <td>{{source.lastModifiedBy}}</td>
+                <td>{{source.lastModifiedDate | date:'dd/MM/yy HH:mm'}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../configuration-sources', source.id]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'configuration-sources/'+ source.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'configuration-sources/'+ source.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm" >
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="sources">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

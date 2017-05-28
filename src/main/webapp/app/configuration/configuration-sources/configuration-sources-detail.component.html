@@ -1,0 +1,28 @@
+<div>
+    <h2>
+        <span jhiTranslate="configurarionSource.detail.title">Source</span> [<b>{{source.name}}</b>]
+    </h2>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="configurarionSource.name">Name</span></dt>
+        <dd>
+            <span>{{source.name}}</span>
+            <span class="badge badge-danger" *ngIf="!source.activated"
+                  jhiTranslate="userManagement.deactivated">Deactivated</span>
+            <span class="badge badge-success" *ngIf="source.activated"
+                  jhiTranslate="userManagement.activated">Activated</span>
+        </dd>
+        <dt><span jhiTranslate="userManagement.createdBy">Created By</span></dt>
+        <dd>{{source.createdBy}}</dd>
+        <dt><span jhiTranslate="userManagement.createdDate">Created Date</span></dt>
+        <dd>{{source.createdDate | date:'dd/MM/yy HH:mm' }}</dd>
+        <dt><span jhiTranslate="userManagement.lastModifiedBy">Last Modified By</span></dt>
+        <dd>{{source.lastModifiedBy}}</dd>
+        <dt><span jhiTranslate="userManagement.lastModifiedDate">Last Modified Date</span></dt>
+        <dd>{{source.lastModifiedDate | date:'dd/MM/yy HH:mm'}}</dd>
+    </dl>
+    <button type="submit"
+            routerLink="/configurarion-sources"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="configurarionSources.action.back"> Back</span>
+    </button>
+</div>

@@ -1,0 +1,40 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="mySourceLabel" jhiTranslate="configurationSource.home.createOrEditLabel">
+            Create or edit a Source</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+            (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group">
+            <label jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" name="id"
+                   [(ngModel)]="source.id" readonly>
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="configurationSource.name">name</label>
+            <input type="text" class="form-control" name="name" #nameInput="ngModel"
+                   [(ngModel)]="source.name" required minlength="1" maxlength="50" >
+
+        </div>
+        <div class="form-check">
+            <label class="form-check-label" for="activated">
+                <input class="form-check-input" [disabled]="source.id === null" type="checkbox" id="activated" name="activated" [(ngModel)]="source.activated">
+                <span jhiTranslate="configurationSource.activated">Activated</span>
+            </label>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span
+            jhiTranslate="configurationSource.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-floppy-o"></span>&nbsp;<span jhiTranslate="configurationSource.action.save">Save</span>
+        </button>
+    </div>
+</form>
