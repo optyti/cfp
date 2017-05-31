@@ -14,7 +14,16 @@ import {
     SourceMgmtDeleteDialogComponent,
     SourceResolvePagingParams,
     SourceResolve,
-    SourceModalService
+    SourceModalService,
+    BillMgmtComponent,
+    BillDialogComponent,
+    BillDeleteDialogComponent,
+    BillMgmtDetailComponent,
+    BillMgmtDialogComponent,
+    BillMgmtDeleteDialogComponent,
+    BillResolvePagingParams,
+    BillResolve,
+    BillModalService
 } from './';
 
 @NgModule({
@@ -30,15 +39,26 @@ import {
         SourceMgmtDetailComponent,
         SourceMgmtDialogComponent,
         SourceMgmtDeleteDialogComponent,
+        BillMgmtComponent,
+        BillDialogComponent,
+        BillDeleteDialogComponent,
+        BillMgmtDetailComponent,
+        BillMgmtDialogComponent,
+        BillMgmtDeleteDialogComponent
     ],
     entryComponents: [
         SourceMgmtDialogComponent,
         SourceMgmtDeleteDialogComponent,
+        BillMgmtDialogComponent,
+        BillMgmtDeleteDialogComponent
     ],
     providers: [
         SourceResolvePagingParams,
         SourceResolve,
-        SourceModalService
+        SourceModalService,
+        BillResolvePagingParams,
+        BillResolve,
+        BillModalService
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

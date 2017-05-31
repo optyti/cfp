@@ -2,13 +2,16 @@ import { Routes } from '@angular/router';
 
 import {
     sourceMgmtRoute,
-    sourceDialogRoute
+    sourceDialogRoute,
+    billMgmtRoute,
+    billDialogRoute
 } from './';
 
 import { UserRouteAccessService } from '../shared';
 
 const ADMIN_ROUTES = [
-    ...sourceMgmtRoute
+    ...sourceMgmtRoute,
+    ...billMgmtRoute
 ];
 
 export const configurationState: Routes = [{
@@ -19,5 +22,6 @@ export const configurationState: Routes = [{
     canActivate: [UserRouteAccessService],
     children: ADMIN_ROUTES
 },
-    ...sourceDialogRoute
+    ...sourceDialogRoute,
+    ...billDialogRoute
 ];

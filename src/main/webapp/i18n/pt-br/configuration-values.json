@@ -1,0 +1,29 @@
+{
+    "configurationSource": {
+        "home": {
+            "title": "Valores",
+            "createLabel": "Adicionar",
+            "createOrEditLabel": "Associar Valor"
+        },
+        "created": "Nova Fonte foi criada com a identificação {{ param }}",
+        "updated": "Fonte com a identificação {{ param }} foi atualizada ",
+        "deleted": "Fonte com a identificação {{ param }} foi removida",
+        "delete": {
+            "question": "Você tem certeza que deseja excluir a Fonte {{ name }}?"
+        },
+        "detail": {
+            "title": "Fonte Financeira"
+        },
+        "action": {
+        	"cancel": "Cancelar",
+        	"save": "Salvar"
+        },
+        "name": "Nome",
+        "activated": "Ativo",
+        "deactivated": "Inativo",
+        "createdBy": "Criado por",
+        "createdDate": "Criado em",
+        "lastModifiedBy": "Alterado por",
+        "lastModifiedDate": "Alterado em"
+    }
+}

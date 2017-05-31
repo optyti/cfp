@@ -1,0 +1,30 @@
+{
+    "configurationBill": {
+        "home": {
+            "title": "Obrigação Financeira",
+            "createLabel": "Adicionar",
+            "createOrEditLabel": "Criar/Editar Obrigação"
+        },
+        "created": "Nova Obriga��o foi criada com a identificação {{ param }}",
+        "updated": "Obrigação com a identificação {{ param }} foi atualizada ",
+        "deleted": "Obrigação com a identificação {{ param }} foi removida",
+        "delete": {
+            "question": "Você tem certeza que deseja excluir a Obrigação {{ name }}?"
+        },
+        "detail": {
+            "title": "Obrigação Financiera"
+        },
+        "action": {
+        	"cancel": "Cancelar",
+        	"save": "Salvar"
+        },
+        "name": "Nome",
+        "activated": "Ativo",
+        "deactivated": "Inativo",
+        "createdBy": "Criado por",
+        "createdDate": "Criado em",
+        "lastModifiedBy": "Alterado por",
+        "lastModifiedDate": "Alterado em",
+        "billMaster": "Conta Pai"
+    }
+}

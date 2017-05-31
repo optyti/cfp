@@ -10,6 +10,7 @@ import {
     AccountService,
     UserService,
     SourceService,
+    BillService,
     StateStorageService,
     LoginService,
     LoginModalService,
@@ -37,6 +38,7 @@ import {
         CSRFService,
         AuthServerProvider,
         SourceService,
+        BillService,
         UserService,
         DatePipe
     ],

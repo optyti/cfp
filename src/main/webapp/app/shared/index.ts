@@ -16,6 +16,8 @@ export * from './login/login.service';
 export * from './login/login-modal.service';
 export * from './source/source.model';
 export * from './source/source.service';
+export * from './bill/bill.model';
+export * from './bill/bill.service';
 export * from './user/account.model';
 export * from './user/user.model';
 export * from './user/user.service';

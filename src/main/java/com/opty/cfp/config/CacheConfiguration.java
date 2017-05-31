@@ -39,6 +39,7 @@ public class CacheConfiguration {
         return cm -> {
             cm.createCache(com.opty.cfp.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(com.opty.cfp.domain.Source.class.getName(), jcacheConfiguration);
+            cm.createCache(com.opty.cfp.domain.Bill.class.getName(), jcacheConfiguration);
             cm.createCache(com.opty.cfp.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(com.opty.cfp.domain.User.class.getName() + ".authorities", jcacheConfiguration);
             cm.createCache(com.opty.cfp.domain.PersistentToken.class.getName(), jcacheConfiguration);

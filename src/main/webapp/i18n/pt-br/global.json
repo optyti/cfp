@@ -12,6 +12,8 @@
              "configuration": {
                 "main": "Configuração",
                 "sources": "Fontes Financeiras",
+                "bills": "Obrigação Financeira",
+                "values": "Associação de Valores",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

@@ -1,0 +1,30 @@
+<div *ngIf="bill">
+	<div>
+	    <h2>
+	        <span jhiTranslate="configurationBill.detail.title">Bill</span> [<b>{{bill.name}}</b>]
+	    </h2>
+	    <dl class="row-md jh-entity-details">
+	        <dt><span jhiTranslate="configurationBill.name">Name</span></dt>
+	        <dd>
+	            <span>{{bill.name}}</span>
+	            <span class="badge badge-danger" *ngIf="!bill.activated"
+	                  jhiTranslate="configurationBill.deactivated">Deactivated</span>
+	            <span class="badge badge-success" *ngIf="bill.activated"
+	                  jhiTranslate="configurationBill.activated">Activated</span>
+	        </dd>
+	        <dt><span jhiTranslate="configurationBill.createdBy">Created By</span></dt>
+	        <dd>{{bill.createdBy}}</dd>
+	        <dt><span jhiTranslate="configurationBill.createdDate">Created Date</span></dt>
+	        <dd>{{bill.createdDate | date:'dd/MM/yy HH:mm' }}</dd>
+	        <dt><span jhiTranslate="configurationBill.lastModifiedBy">Last Modified By</span></dt>
+	        <dd>{{bill.lastModifiedBy}}</dd>
+	        <dt><span jhiTranslate="configurationBill.lastModifiedDate">Last Modified Date</span></dt>
+	        <dd>{{bill.lastModifiedDate | date:'dd/MM/yy HH:mm'}}</dd>
+	    </dl>
+	    <button type="submit"
+	            routerLink="/configuration-bills"
+	            class="btn btn-info">
+	        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+	    </button>
+	</div>
+</div>
